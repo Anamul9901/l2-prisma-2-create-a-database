@@ -1,0 +1,21 @@
+%  ["https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql"]
+1: yarn init -y
+2: yarn add install prisma typescript ts-node @types/node -D
+3: npx tsc --init
+4: npx prisma
+5: npx prisma init
+6: chang databse name and password in .env file 
+7: yarn add @prisma/client
+8: npx prisma migrate dev
+
+9: go tsconfig.json [// "rootDir": "./",] uncomment this and writ ["rootDir": "./src",]
+9: yarn add ts-node-dev --dev [for run src ts files]
+10: ts-node-dev --respawn --transpile-only server.ts [copy this from ts-node-dev and pest package.json scripts] [chang servier.ts to your file path name]
+11: yarn dev
+
+
+12: npx prisma studio [run prisma studio for show all data]
+
+
+
+PH PrismaMastery repo: https://github.com/Apollo-Level2-Web-Dev/PrismaMastery
