@@ -33,19 +33,33 @@ const create = async () => {
 
     const createPost = await prisma.post.create({
         data: {
-            title: "this is title",
-            content: "this is content",
+            title: "this is title 5",
+            content: "this is content 5",
             authorId: 1,
             postCategory: {
-                create: {
-                    categoryId: 3
-                    // relation key category (not category) deye data create
-                    // category: {
-                    //     connect: {
-                    //         id: 1
-                    //     }
-                    // }
-                }
+                // just ekta category add korle
+                // create: {
+                //     categoryId: 3
+                //     // relation key category (not category) deye data create
+                //     // category: {
+                //     //     connect: {
+                //     //         id: 1
+                //     //     }
+                //     // }
+                // }
+
+                // onkgula category add korle
+                create: [
+                    {
+                        categoryId: 1
+                    },
+                    {
+                        categoryId: 3
+                    },
+                    {
+                        categoryId: 4
+                    }
+                ]
             }
         },
         // include user korar karone postCategory je crete hoise oitao console.log e dekhabe
