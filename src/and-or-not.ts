@@ -55,16 +55,16 @@ const filtering = async () => {
 
 
     // je user er email 'us' deye satrt only se users gulu dekhabe
-    const startsWith = await prisma.user.findMany({
-        where: {
-            email: {
-                // startsWith: 'us'
-                // endsWith: "com"
-                equals: "user1@gmail.com"  // full match hote hobe
-            }
-        }
-    })
-    console.log(startsWith)
+    // const startsWith = await prisma.user.findMany({
+    //     where: {
+    //         email: {
+    //             // startsWith: 'us'
+    //             // endsWith: "com"
+    //             equals: "user1@gmail.com"  // full match hote hobe
+    //         }
+    //     }
+    // })
+    // console.log(startsWith)
 }
 
 filtering();

@@ -18,24 +18,24 @@ const filtering = async () => {
 
 
     // find all relation data.
-    const inDepthData = await prisma.user.findUnique({
-        where: {
-            id: 3
-        },
-        include: {
-            post: {
-                include: {
-                    postCategory: {
-                        include: {
-                            category: true
-                        }
-                    }
-                }
-            }
-        }
-    })
-    // console.log(inDepthData);
-    console.dir(inDepthData, {depth: Infinity})
+    // const inDepthData = await prisma.user.findUnique({
+    //     where: {
+    //         id: 3
+    //     },
+    //     include: {
+    //         post: {
+    //             include: {
+    //                 postCategory: {
+    //                     include: {
+    //                         category: true
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // })
+    // // console.log(inDepthData);
+    // console.dir(inDepthData, {depth: Infinity})
 }
 
 filtering();
