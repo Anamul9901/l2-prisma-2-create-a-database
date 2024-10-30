@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/relational-queries.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/and-or-not.ts"
   },
   "devDependencies": {
     "@types/node": "^22.8.1",

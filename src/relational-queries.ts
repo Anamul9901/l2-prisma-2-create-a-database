@@ -12,7 +12,7 @@ const relationalQueries = async () => {
     //     }
     // }).post();
 
-    
+
     // user er data + user er all post
     // const result = await prisma.user.findUnique({
     //     where: {
@@ -23,6 +23,23 @@ const relationalQueries = async () => {
     //     }
     // })
     // console.log(result)
+
+
+
+    // find: jer user er post publish: true ,se user gulu dekhete chi
+    // const publishedPostUsers = await prisma.user.findMany({
+    //     include: {
+    //         post: {
+    //             where:{
+    //                 published: true
+    //             }
+    //         }
+    //     }
+    // })
+
+
+    // console.dir(publishedPostUsers, { depth: Infinity }) // ai console e konu [object], [object] dekhabe na. all data dekhabe.
+
 }
 
 relationalQueries();
