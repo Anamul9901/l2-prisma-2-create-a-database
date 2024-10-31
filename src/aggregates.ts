@@ -3,6 +3,8 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const aggregates = async () => {
+    // aggregates only number field er upor kaj kore. Only _count aggregates er khatre string ba onno field o kaj krbe.
+
 
     // find avagre age
     // const avgAge = await prisma.user.aggregate({
@@ -25,10 +27,23 @@ const aggregates = async () => {
     // find count of age field
     // const countAge = await prisma.user.aggregate({
     //     _count: {
-    //         age: true
+    //         // age: true
+    //         username: true
     //     }
     // })
     // console.log(countAge);
+
+    // count titie with where
+    // const countPostTitle = await prisma.post.aggregate({
+    //     _count: {
+    //         title: true
+    //     },
+    //     where: {
+    //         published: true
+    //     }
+
+    // })
+    // console.log(countPostTitle);
 
 
     // find number of records
