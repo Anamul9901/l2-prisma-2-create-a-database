@@ -31,6 +31,7 @@ model User {
   id       Int      @id @default(autoincrement())
   username String   @unique
   email    String
+  age      Int      @default(10)
   role     UserRole @default(user)
   profile  Profile? // one to one relation
   post     Post[] //  one to many relation
