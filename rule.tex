@@ -6,16 +6,24 @@
 5: npx prisma init
 6: chang databse name and password in .env file 
 7: yarn add @prisma/client
-8: npx prisma migrate dev
+8: npx prisma migrate dev ['npx prisma generate' auto run ]
+-: npx prisma generate [fi not run with migrate]
 
 9: go tsconfig.json [// "rootDir": "./",] uncomment this and writ ["rootDir": "./src",]
 9: yarn add ts-node-dev --dev [for run src ts files]
 10: ts-node-dev --respawn --transpile-only server.ts [copy this from ts-node-dev and pest package.json scripts] [chang servier.ts to your file path name]
 11: yarn dev
 
-
 12: npx prisma studio [run prisma studio for show all data]
 
+------------------------
+essential prisma commands and conclusion
+1: npx prisma validate [if any wrong code is exist in schema.prisma file, then find out this];
+2: npx prisma format [if auto format is not work, than it's work]
+3: npx prisma db pull --print [database saved schema show]
+4: npx prisma db pull [get all table schema name]
+5: npx prisma db push [if i want save my schema in database, but not generate in here file]
+6: npx prisma [show all command]
 
 
 PH PrismaMastery repo: https://github.com/Apollo-Level2-Web-Dev/PrismaMastery

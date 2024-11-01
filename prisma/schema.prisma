@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -19,10 +13,10 @@ model Post {
   content      String
   published    Boolean        @default(false)
   authorId     Int
-  author       User           @relation(fields: [authorId], references: [id])
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
   postCategory PostCategory[]
+  author       User           @relation(fields: [authorId], references: [id])
 
   @@map("posts")
 }
@@ -31,10 +25,10 @@ model User {
   id       Int      @id @default(autoincrement())
   username String   @unique
   email    String
-  age      Int      @default(10)
   role     UserRole @default(user)
-  profile  Profile? // one to one relation
-  post     Post[] //  one to many relation
+  age      Int      @default(10)
+  post     Post[]
+  profile  Profile?
 
   @@map("users")
 }
@@ -43,7 +37,6 @@ model Profile {
   id     Int     @id @default(autoincrement())
   bio    String?
   userId Int     @unique
-  // jekhane foregn key thakbe sekhane relation er jonno code likhbo
   user   User    @relation(fields: [userId], references: [id])
 
   @@map("profiles")
@@ -57,14 +50,13 @@ model Category {
   @@map("categorys")
 }
 
-// many to many er join model er khetre sobgula key neye composit key create korbo
 model PostCategory {
   postId     Int
-  post       Post     @relation(fields: [postId], references: [id])
   categoryId Int
   category   Category @relation(fields: [categoryId], references: [id])
+  post       Post     @relation(fields: [postId], references: [id])
 
-  @@id([postId, categoryId]) // composit key
+  @@id([postId, categoryId])
   @@map("post_category")
 }
 
